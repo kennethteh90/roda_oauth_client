@@ -32,6 +32,17 @@ class App < Roda
         view('login')
       end
     end
+
+    r.is 'get_userinfo' do
+      r.get do
+        @access_token = r.params['access_token']
+        uri = 'https://smurnauth.herokuapp.com/oauth/userinfo'
+        res = HTTParty.get(uri, headers: { Authorization: "Bearer #{@access_token}" })
+        @sub = res.parsed_response['sub']
+        @email = res.parsed_response['email']
+        view('userinfo')
+      end
+    end
   end
 end
 

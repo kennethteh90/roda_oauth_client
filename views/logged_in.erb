@@ -1,6 +1,8 @@
 <% if @access_token %>
   <p>You're logged in!</p>
   <p>Use this token for all subsequent calls: <%= @access_token %></p>
+
+  <a class="btn btn-primary" href="/get_userinfo?access_token=<%= @access_token %>">Get userinfo</a>
 <% else %>
   <p>Something has gone wrong. Please try again.</p>
   <a href="/">Back to login</a>
