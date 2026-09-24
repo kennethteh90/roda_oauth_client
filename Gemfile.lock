@@ -15,10 +15,11 @@ GEM
     rack (2.2.4)
     roda (3.58.0)
       rack
-    tilt (2.0.10)
+    tilt (2.9.0)
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   erubis
